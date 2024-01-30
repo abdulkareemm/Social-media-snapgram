@@ -4,6 +4,7 @@ import { useSignOutAccount } from '@/lib/react-query/queriesAndMutaions';
 import { INavLink } from '@/types';
 import React from 'react'
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Button } from '../ui/button';
 
 const Left = () => {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Left = () => {
         </Link>
         {isLoading || !user.email ? (
           <div className="h-14">
-            <div className='loader' />
+            <div className="loader" />
           </div>
         ) : (
           <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
@@ -78,6 +79,15 @@ const Left = () => {
           })}
         </ul>
       </div>
+
+      <Button
+        variant="ghost"
+        className="shad-button_ghost"
+        onClick={(e) => handleSignOut(e)}
+      >
+        <img src="/assets/icons/logout.svg" alt="logout" />
+        <p className="small-medium lg:base-medium">Logout</p>
+      </Button>
     </nav>
   );
 }
