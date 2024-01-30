@@ -277,4 +277,17 @@
   .shad-button_ghost {
     @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
   }
+  .loader {
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #fff #0000;
+    animation: l1 1s infinite;
+  }
+  @keyframes l1 {
+    to {
+      transform: rotate(0.5turn);
+    }
+  }
 }
